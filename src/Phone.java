@@ -84,29 +84,7 @@ public class Phone {
                 "Введите модель", "Введите номер телефона", "Введите имя", "Введите вес"
         };
 
-        // Цикл для динамического ввода значений
-        for (int i = 0; i < param.length; i++) {
-            System.out.println(param[i]);
-            String input = scanner.nextLine();
-
-            switch (i) {
-                case 0 -> phone.setModel(input);
-                case 1 -> phone.setNumber(input);
-                case 2 -> phone.setName(input);
-                case 3 -> phone.setWeight(Double.parseDouble(input));
-            }
-        }
-
-
-        phone.getModel();
-        phone.getNumber();
-        phone.getName();
-        phone.getWeight();*/
-    }
-}
-
-
-
+       
 
 // Phone phone = new Phone("+7-281-828-38-44", "Витёк", 2.15, "Samsung");
 // phone.getReceiveCall();
