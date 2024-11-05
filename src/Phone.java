@@ -6,6 +6,7 @@ public class Phone {
     private double weight;
     private String model;
 
+    // Конструктор с четырьмя параметрами
     public Phone(String number, String name, double weight, String model) {
         this.number = number;
         this.name = name;
@@ -13,32 +14,42 @@ public class Phone {
         this.model = model;
     }
 
-    public Phone(){
-
+    // Пустой конструктор
+    public Phone() {
     }
 
-    public Phone(String number,String model) {
+    // Конструктор с двумя параметрами (номер и модель)
+    public Phone(String number, String model) {
         this.number = number;
         this.model = model;
     }
 
+    // Метод для получения звонка
     public void getReceiveCall() {
-        System.out.println("Звонит "+ name);
+        System.out.println("Звонит " + name);
     }
+
+    // Метод для получения номера телефона
     public void getNumber() {
-        System.out.println("Номер телефона "+ number);
+        System.out.println("Номер телефона: " + number);
     }
+
+    // Метод для получения имени
     public void getName() {
-        System.out.println("Имя " + name);
+        System.out.println("Имя: " + name);
     }
 
+    // Метод для получения веса телефона
     public void getWeight() {
-        System.out.println("Вес телефона "+ weight);
-    }
-    public void getModel() {
-        System.out.println("Модель телефона "+ model);
+        System.out.println("Вес телефона: " + weight + " кг");
     }
 
+    // Метод для получения модели телефона
+    public void getModel() {
+        System.out.println("Модель телефона: " + model);
+    }
+
+    // Сеттеры для всех полей
     public void setNumber(String number) {
         this.number = number;
     }
@@ -55,85 +66,48 @@ public class Phone {
         this.model = model;
     }
 
-    public static void main(String[] args){
-        // Второй способ: через пустой конструктор и сеттеры
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 1-й способ: через конструктор с четырьмя параметрами
+        Phone phone1 = new Phone("+7-123-456-78-90", "Иван", 1.5, "iPhone 13");
+        System.out.println("Phone1 (через конструктор с четырьмя параметрами):");
+        phone1.getReceiveCall();
+        phone1.getNumber();
+        phone1.getModel();
+        phone1.getWeight();
+
+        // 2-й способ: через пустой конструктор и сеттеры
         Phone phone2 = new Phone();
-        phone2.setNumber("+7-987-654-32-10");
-        phone2.setName("Иван");
-        phone2.setWeight(2.0);
-        phone2.setModel("Samsung");
+        System.out.println("\nВведите данные для phone2 (пустой конструктор и сеттеры):");
+        System.out.print("Введите номер телефона: ");
+        phone2.setNumber(scanner.nextLine());
+        System.out.print("Введите имя владельца: ");
+        phone2.setName(scanner.nextLine());
+        System.out.print("Введите вес телефона: ");
+        phone2.setWeight(scanner.nextDouble());
+        scanner.nextLine(); // Очищаем буфер после nextDouble()
+        System.out.print("Введите модель телефона: ");
+        phone2.setModel(scanner.nextLine());
+
+        // Вызов методов для phone2
+        System.out.println("\nPhone2:");
         phone2.getReceiveCall();
         phone2.getNumber();
         phone2.getModel();
         phone2.getWeight();
 
-        // Третий способ: через конструктор с частичными параметрами
+        // 3-й способ: через конструктор с двумя параметрами и сеттеры для остальных
         Phone phone3 = new Phone("+7-555-444-33-22", "Xiaomi");
         phone3.setName("Ольга");
         phone3.setWeight(1.7);
+        System.out.println("\nPhone3 (через конструктор с двумя параметрами и сеттеры для остальных):");
         phone3.getReceiveCall();
         phone3.getNumber();
         phone3.getModel();
         phone3.getWeight();
 
-        Scanner scanner = new Scanner(System.in);
-        Phone phone = new Phone();
-
-
-        /*String[] param = {
-                "Введите модель", "Введите номер телефона", "Введите имя", "Введите вес"
-        };
-
-        // Цикл для динамического ввода значений
-        for (int i = 0; i < param.length; i++) {
-            System.out.println(param[i]);
-            String input = scanner.nextLine();
-
-            switch (i) {
-                case 0 -> phone.setModel(input);
-                case 1 -> phone.setNumber(input);
-                case 2 -> phone.setName(input);
-                case 3 -> phone.setWeight(Double.parseDouble(input));
-            }
-        }
-
-
-        phone.getModel();
-        phone.getNumber();
-        phone.getName();
-        phone.getWeight();*/
+        // Закрываем Scanner
+        scanner.close();
     }
 }
-
-
-
-
-// Phone phone = new Phone("+7-281-828-38-44", "Витёк", 2.15, "Samsung");
-// phone.getReceiveCall();
-// phone.getNumber();
-// phone.getName();
-// phone.getWeight();
-// phone.getModel();
-// Phone phone2 = new Phone();
-// phone2.setModel(str);
-        /*  String[] param = {
-                "Введите модель", "Введите номер телефона", "Введите имя", "Введите вес"
-        };
-
-        for(String parameter : param){
-            System.out.println(parameter);
-            String str = scanner.nextLine();
-
-        }*/
-
-
-
-
-
-
-
-
-/*
-public static void main(String[] args) {
-
-}*/
